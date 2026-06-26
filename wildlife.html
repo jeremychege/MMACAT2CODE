@@ -1,1 +1,110 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Responsive viewport meta tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Page description for search engines / screen readers -->
+  <meta name="description"
+        content="Join our mission to protect endangered wildlife across the globe. Watch our latest conservation video and learn how you can help." />
+
+  <title>Save Our Wildlife – Conservation Initiative</title>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="wildlife.css" />
+</head>
+
+<body>
+
+  <!-- Skip navigation link – allows keyboard users to jump past the header -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" role="banner">
+    <p class="site-header__eyebrow" aria-hidden="true">Conservation Initiative</p>
+
+    <!-- Requirement 1: "Save Our Wildlife" heading -->
+    <h1>Save Our Wildlife</h1>
+  </header>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main id="main-content" tabindex="-1">
+
+    <!-- Video card contains the video, description, and controls -->
+    <article class="video-card" aria-labelledby="video-title">
+
+      <!-- Screen-reader-only title for the article region -->
+      <h2 id="video-title" class="sr-only">Featured Conservation Video</h2>
+
+      <!-- Requirement 2: Embedded video with controls
+           The wrapper div is toggled with the hidden attribute via JS.       -->
+      <div class="video-wrapper" id="videoWrapper">
+        <video
+          id="wildlifeVideo"
+          controls
+          preload="metadata"
+          aria-label="Wildlife conservation video showcasing endangered species and habitat protection efforts">
+          <!-- Primary source -->
+          <source src="wildlife.mp4" type="video/mp4" />
+          <!-- Fallback message for browsers that do not support the video element -->
+          <p>
+            Your browser does not support HTML5 video.
+            <a href="wildlife.mp4">Download the video</a> to watch it offline.
+          </p>
+        </video>
+      </div>
+
+      <!-- Requirement 3: Short description below the video -->
+      <section class="video-description" aria-labelledby="desc-label">
+        <p class="video-description__label" id="desc-label">About This Film</p>
+        <p>
+          Every year, thousands of species edge closer to extinction due to habitat loss,
+          poaching, and climate change. This short film takes you inside our field work —
+          from rainforest corridors in Central Africa to coral reefs in the Indo-Pacific —
+          where dedicated rangers and scientists are turning the tide. Together, we can
+          protect the biodiversity our planet depends on.
+        </p>
+      </section>
+
+      <!-- Controls bar -->
+      <!-- Requirement 4: Toggle button – hides video or plays it if not playing -->
+      <div class="controls-bar">
+        <button
+          id="toggleBtn"
+          type="button"
+          aria-label="Pause and hide the wildlife video"
+          aria-pressed="true">
+          <span class="btn-icon" id="btnIcon" aria-hidden="true">⏸</span>
+          <span id="btnText">Hide Video</span>
+        </button>
+
+        <!-- Live region announces playback state changes to screen readers -->
+        <span
+          id="statusLabel"
+          class="status-label"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true">
+          Video is visible (paused)
+        </span>
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer" role="contentinfo">
+    <p>
+      &copy; 2025 Save Our Wildlife Initiative &mdash;
+      <a href="#main-content">Back to top</a>
+    </p>
+  </footer>
+
+  <!-- JavaScript (deferred until HTML is fully parsed) -->
+  <script src="Wildlife.js" defer></script>
+
+</body>
+</html>
